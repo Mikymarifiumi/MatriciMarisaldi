@@ -1,13 +1,14 @@
-/*
- * Matrice: una classe wrapper
- * per una matrice bidimensionale di interi.
- */
+
 
 package matrici;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Logger;
+
 /**
  *
- * @author Sandro Gallo
+ * @author Michele Marisaldi
  */
 public class Matrice {
     
@@ -15,7 +16,7 @@ public class Matrice {
     
     // costruttore uno
     public Matrice(int x, int y) {
-        // da completare
+        theMatrix = new int[x][y];
     }
     
     // costruttore due
@@ -33,15 +34,29 @@ public class Matrice {
 
     @Override
     public String toString() {
-        return "Matrice{" + "theMatrix=" + theMatrix + '}';
+        String s ="";
+        for (int i = 0; i < theMatrix.length; i++) {
+            for (int j = 0; j < theMatrix.length; j++) {
+                s += theMatrix[i][j] + "\t";
+                
+            }
+            s +="\n";    
+        }
+        return s;
     }
 
     public void toFile( String filename ) {
-        // da completare
+        try{
+            FileWriter fw = new FileWriter(filename);
+            fw.write(this.toString());
+        }catch(IOException ex){
+            Logger.getLogger(Matrice.class.getName());
+        }
     }
 
     public void fromFile( String filename ) {
-        // da completare
+        
+         // da completare
     }
     
 }
