@@ -1,12 +1,9 @@
-/*
- * Esempi di gestione delle matrici di interi.
- */
 
 package matrici;
 
 /**
  *
- * @author Sandro Gallo
+ * @author Michele Marisaldi
  */
 public class Matrici {
 
@@ -15,7 +12,7 @@ public class Matrici {
      */
     public static void main(String[] args) {
         
-        Matrice m = new Matrice(4, 6);
+        Matrice m = new Matrice(6, 8);
         
         m.fillRandom();
         System.out.println(m);
